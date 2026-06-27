@@ -1,4 +1,4 @@
-# **NEUROMETRIC INDEX FOR LARGE LANGUAGE MODELS** 
+# **NEUROMETRIC INDEX FOR LARGE LANGUAGE MODELS**
 
 # **ARTIFICIAL INTELLIGENCE NEUROMETRIC INDEX (AINI)**
 
@@ -8,9 +8,11 @@
 
 
 
-**1. dataset\_{name}.py** 
+**1. dataset\_{name}.py**
 
 downloading datasets
+
+
 
 
 
@@ -20,9 +22,13 @@ model selection from HuggingFace
 
 
 
+
+
 **3. download\_models\_multitask.py**
 
 download models locally
+
+
 
 
 
@@ -32,23 +38,31 @@ main script testing the models on the datasets
 
 
 
+
+
 **5. connectivity\_vlm\_multitask\_pca.py**
 
-building a connectome from model activations of all layers. 
+building a connectome from model activations of all layers and computing the AINI. 
 
-A variant without PCA and using only layer-mean is also available. 
+A variant without PCA and using only layer-mean is also available.
+
+
 
 
 
 **6. plot\_connectomes\_vlm\_multitask.py**
 
-plotting connectomes 
+plotting connectomes
+
+
 
 
 
 **7. graph\_analysis\_vlm\_multitask.py**
 
 analyses of the connectomes with graph theory
+
+
 
 
 
