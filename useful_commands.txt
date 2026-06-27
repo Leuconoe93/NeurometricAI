@@ -1,0 +1,103 @@
+##########################################################  
+USEFUL COMMANDS ------------------------------------------
+##########################################################  
+
+
+##########################################################  
+CLAUDE CODE ----------------------------------------------
+########################################################## 
+cd "D:\Data Science\AINI"
+claude
+
+
+
+##########################################################  
+CUDA, GPU ------------------------------------------------
+########################################################## 
+# verify CUDA GPU available
+python -c "import torch; print(torch.cuda.is_available()); print(torch.__version__)"
+
+
+# broken CUDA PyTorch. unisstall + reinstall correct version 
+# error is likely due to a pip upgrade which selected wrong version
+pip uninstall torch torchvision torchaudio -y
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+python -c "import torch; print(torch.cuda.is_available()); print(torch.__version__); print(torch.cuda.get_device_name(0))"
+
+
+
+##########################################################  
+HUGGING FACE ---------------------------------------------
+########################################################## 
+# transformer libraries from Hugging Face
+pip install transformers datasets accelerate bitsandbytes huggingface_hub
+pip install --upgrade transformers
+
+
+# Hugging Face tokens
+pip install huggingface_hub
+huggingface-cli login (deprecated) --> use hf auth login
+
+
+# Hugging Face: delete local cache
+# call cache, inspect its content, remove  
+hu cache
+hf cache ls    
+hr cache rm 
+hf <command> --help
+
+# to delete HF cache, also the brutal method applies: delete it directly from File Explorer
+# mine it's usually at: C:\Users\Logos\.cache\huggingface
+
+
+# image processor: useful to add in model_load to see the exact tag used for images iin a model_load
+print(processor.image_token)
+print(processor.tokenizer.additional_special_tokens)
+
+
+
+##########################################################  
+PIP ------------------------------------------------------
+########################################################## 
+# upgrading pip
+python.exe -m pip install --upgrade pip
+
+
+
+##########################################################  
+PYTORCH --------------------------------------------------
+########################################################## 
+# installing pythorch
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+
+
+# force correct PyTorch version for CUDA GPU
+pip uninstall torch torchvision -y
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124 --pre
+
+
+
+##########################################################  
+VIRTUAL ENVIRONMENT --------------------------------------
+##########################################################  
+# to activate the virtual enviroinment 
+.venv\Scripts\activate
+
+
+# delete virtual enviroinment and rebuild it (with a specific python version)
+deactivate
+rmdir /s /q .venv
+py -3.13 -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+
+
+
+
+
+
+
+
+
+
+
